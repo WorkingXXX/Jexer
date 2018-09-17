@@ -8,27 +8,33 @@
 #define JEXER_SHADER_PROGRAM_CREATOR_H
 
 #include "JexerPrerequisites.h"
+#include "JexerShaderSlot.h"
+
+#include <GL\glew.h>
 
 namespace Jexer
 {
 	/**
-		
+		根据Shader来创建Shader Program
 	*/
 	class JexerShaderProgramCreator
 	{
 	public:
 
-		JexerShaderProgramCreator();
+		JexerShaderProgramCreator(const JexerShaderSlot& shaderSlot);
 
-		~JexerShaderProgramCreator();
+		JexerShaderProgramCreator(const JexerShaderProgramCreator&) = default;
 
-		// 创建Shader程序
-		void CreateShaderProgram();
+		JexerShaderProgramCreator& operator=(const JexerShaderProgramCreator&) = default;
+
+		~JexerShaderProgramCreator() = default;
+
+		// 创建Shader程序，返回其ID
+		GLuint CreateShaderProgram();
+
+		void UseCurrentShaderProgram();
 
 	protected:
-
-		// 获取Shader
-		void GetShader();
 
 		// 编译Shader
 		void CompilerShader();
@@ -37,7 +43,9 @@ namespace Jexer
 		void LinkShader();
 
 	private:
-
+		GLuint m_currShaderPrgm;
+		JexerShaderSlot m_shaderSlot;
+		STLVector<GLuint> m_shaderObj;
 	};
 
 

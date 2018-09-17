@@ -14,6 +14,10 @@
 #include <vector>
 #include <memory>
 
+#include <GL\glew.h>
+
+#pragma comment(lib, "lib/x64/glew32s.lib")
+
 namespace Jexer
 {
 	/**
@@ -46,15 +50,15 @@ namespace Jexer
 	using STLWPtr = std::weak_ptr<T>;
 
 	// Shader类型
-	enum ShaderType
+	enum JexerShaderType
 	{
-		JEXER_GL_VERTEX_SHADER,
-		JEXER_GL_PIXEL_SHADER,
+		JEXER_VERTEX_SHADER,
+		JEXER_PIXEL_SHADER,
 		JEXER_SHADER_NUM
 	};
 
 	// Shader来源的类型
-	enum ShaderSourceType
+	enum JexerShaderSourceType
 	{
 		JEXER_SHADER_SRC_CODESTR,
 		JEXER_SHADER_SRC_FILEPATH,

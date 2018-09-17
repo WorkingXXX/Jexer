@@ -3,14 +3,14 @@
 
 namespace Jexer
 {
-	JexerShader::JexerShader()
-		:m_shaderCode(""), m_shaderSrc(""), m_shaderSrcType(JEXER_SHADER_SRC_URL)
-	{
 
-	}
-
-	JexerShader::JexerShader(const STLStr& shaderSrc, ShaderSourceType shaderSrcType)
-		:m_shaderCode(""), m_shaderSrc(shaderSrc), m_shaderSrcType(shaderSrcType)
+	JexerShader::JexerShader(JexerShaderType shaderType,
+							 const STLStr& shaderSrc, 
+						     JexerShaderSourceType shaderSrcType)
+		:m_shaderCode(""), 
+		 m_shaderType(shaderType),
+		 m_shaderSrc(shaderSrc), 
+		 m_shaderSrcType(shaderSrcType)
 	{
 		m_shaderCode = ParseShaderSrc();
 	}
