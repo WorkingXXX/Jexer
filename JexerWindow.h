@@ -53,8 +53,8 @@ namespace Jexer
 			窗口标题获取和设置函数
 		*/
 
-		Str GetTitle() const;
-		void SetTitle(Str title);
+		STLStr GetTitle() const;
+		void SetTitle(const STLStr& title);
 
 		// 判断窗口是否已经创建
 		bool IsCreated() const
@@ -74,7 +74,7 @@ namespace Jexer
 	protected:
 
 	private:
-		Str m_title;
+		STLStr m_title;
 		WinPtr m_winptr;
 	};
 

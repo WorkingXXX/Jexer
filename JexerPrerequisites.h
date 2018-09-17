@@ -11,6 +11,8 @@
 #include "JexerResource.h"
 
 #include <string>
+#include <vector>
+#include <memory>
 
 namespace Jexer
 {
@@ -29,7 +31,19 @@ namespace Jexer
 	typedef Vector2<float>  VtrFlt2;
 	typedef Vector2<double> VtrDlb2;
 
-	typedef std::string Str;
+	typedef std::string STLStr;
+	
+	template<typename T>
+	using STLVector = std::vector<T>;
+
+	template<typename T>
+	using STLUPtr = std::unique_ptr<T>;
+
+	template<typename T>
+	using STLSPtr = std::shared_ptr<T>;
+
+	template<typename T>
+	using STLWPtr = std::weak_ptr<T>;
 
 	// Shader类型
 	enum ShaderType
@@ -37,6 +51,15 @@ namespace Jexer
 		JEXER_GL_VERTEX_SHADER,
 		JEXER_GL_PIXEL_SHADER,
 		JEXER_SHADER_NUM
+	};
+
+	// Shader来源的类型
+	enum ShaderSourceType
+	{
+		JEXER_SHADER_SRC_CODESTR,
+		JEXER_SHADER_SRC_FILEPATH,
+		JEXER_SHADER_SRC_URL,
+		JEXER_SHADER_SRC_NUM
 	};
 
 }

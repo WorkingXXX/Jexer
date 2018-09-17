@@ -97,12 +97,12 @@ namespace Jexer
 		glfwSetWindowSize(m_winptr, size.x, size.y);
 	}
 
-	Str JexerWindow::GetTitle() const
+	STLStr JexerWindow::GetTitle() const
 	{
 		return m_title;
 	}
 
-	void JexerWindow::SetTitle(Str title)
+	void JexerWindow::SetTitle(const STLStr& title)
 	{
 		m_title = title;
 		glfwSetWindowTitle(m_winptr, m_title.c_str());
