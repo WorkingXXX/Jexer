@@ -5,6 +5,8 @@ namespace Jexer
 {
 	JexerShaderSlot::JexerShaderSlot()
 	{
+		m_shaderVtr.resize(JEXER_SHADER_NUM);
+
 		for (uint i = 0; i < JEXER_SHADER_NUM; i++)
 		{
 			JexerShaderType shaderType = static_cast<JexerShaderType>(i);
@@ -53,25 +55,13 @@ namespace Jexer
 		return isAvailable;
 	}
 
-	JexerShader JexerShaderSlot::GetShaderByType(JexerShaderType shaderType) const
-	{
-		uint i = static_cast<uint>(shaderType);
-		return m_shaderVtr[i];
-	}
-
-	JexerShader JexerShaderSlot::GetShaderByIndex(uint i) const
-	{
-		return m_shaderVtr[i];
-	}
-
 	int JexerShaderSlot::MapShaderTypeToGL(JexerShaderType shaderType)
 	{
 		switch (shaderType)
 		{
 		case JEXER_VERTEX_SHADER: return GL_VERTEX_SHADER;
 		case JEXER_PIXEL_SHADER:  return GL_FRAGMENT_SHADER;
-		default:
-			return GL_VERTEX_SHADER;
+		default: return GL_VERTEX_SHADER;
 		}
 	}
 

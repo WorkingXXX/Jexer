@@ -21,7 +21,7 @@ namespace Jexer
 	{
 	public:
 
-		JexerShaderProgramCreator(const JexerShaderSlot& shaderSlot);
+		explicit JexerShaderProgramCreator(const JexerShaderSlot& shaderSlot);
 
 		JexerShaderProgramCreator(const JexerShaderProgramCreator&) = default;
 

@@ -18,7 +18,7 @@ namespace Jexer
 	STLStr JexerShader::ParseShaderSrc()
 	{
 		STLStr shaderCode = "";
-		std::fstream shaderFile(m_shaderSrc, std::ios::out);
+		std::fstream shaderFile(m_shaderSrc);
 		STLUPtr<char> shaderChars = 0;
 		size_t shaderCharsCount = 0;
 

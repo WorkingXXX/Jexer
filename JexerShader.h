@@ -26,7 +26,7 @@ namespace Jexer
 		// JexerShader含有一个完整的Shader源码，这个Shader的源码来自一个字符串即shaderSrc
 		// shaderSrc可以就是Shader的源码，也可能是Shader的文件路径或网络URL等，
 		// 这个shaderSrc的类型又shaderSrcType指定
-		explicit JexerShader(JexerShaderType shaderType,
+		explicit JexerShader(JexerShaderType shaderType = JEXER_VERTEX_SHADER,
 					         const STLStr& shaderSrc = "", 
 						     JexerShaderSourceType shaderSrcType = JEXER_SHADER_SRC_FILEPATH);
 
@@ -80,8 +80,6 @@ namespace Jexer
 		}
 
 	protected:
-
-		JexerShader() = delete;
 		
 		// 解析Shader来源以获取Shader源码
 		STLStr ParseShaderSrc();

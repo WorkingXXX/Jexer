@@ -34,10 +34,17 @@ namespace Jexer
 		bool IsSlotAvailable() const;
 
 		// 根据Shader的类型来获取Shader
-		JexerShader GetShaderByType(JexerShaderType shaderType) const;
+		JexerShader GetShaderByType(JexerShaderType shaderType) const
+		{
+			uint i = static_cast<uint>(shaderType);
+			return m_shaderVtr[i];
+		}
 
 		// 根据索引来获取Shader
-		JexerShader GetShaderByIndex(uint i) const;
+		JexerShader GetShaderByIndex(uint i) const
+		{
+			return m_shaderVtr[i];
+		}
 
 		// 获取Shader数组
 		STLVector<JexerShader> GetShaders() const

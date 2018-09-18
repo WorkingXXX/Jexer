@@ -8,7 +8,7 @@ using namespace std;
 
 #pragma comment(lib, "OpenGL32.lib")
 #pragma comment(lib, "glfw3.lib")
-#pragma comment
+#pragma comment(lib, "glew32.lib")
 
 enum VAO_IDs
 {
@@ -84,10 +84,11 @@ int main()
 
 		glewInit();
 	
-		
+		Init();
 
 		while (!glfwWindowShouldClose(win.GetHandle()))
 		{
+			
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			Display();
