@@ -14,6 +14,8 @@
 #include <vector>
 #include <memory>
 
+#include <cassert>
+
 #include <GL\glew.h>
 
 #pragma comment(lib, "lib/x64/glew32s.lib")
@@ -34,6 +36,9 @@ namespace Jexer
 	typedef Vector2<uint>   VtrUInt2;
 	typedef Vector2<float>  VtrFlt2;
 	typedef Vector2<double> VtrDlb2;
+
+	typedef GLuint ShaderObjectId;
+	typedef GLuint ShaderProgramId;
 
 	typedef std::string STLStr;
 	

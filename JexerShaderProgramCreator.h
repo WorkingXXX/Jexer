@@ -30,8 +30,9 @@ namespace Jexer
 		~JexerShaderProgramCreator() = default;
 
 		// 创建Shader程序，返回其ID
-		GLuint CreateShaderProgram();
+		ShaderProgramId CreateShaderProgram();
 
+		// 使用当前创建出来的Shader程序
 		void UseCurrentShaderProgram();
 
 	protected:
@@ -45,7 +46,7 @@ namespace Jexer
 	private:
 		GLuint m_currShaderPrgm;
 		JexerShaderSlot m_shaderSlot;
-		STLVector<GLuint> m_shaderObj;
+		STLVector<ShaderObjectId> m_shaderObj;
 	};
 
 

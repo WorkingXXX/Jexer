@@ -10,7 +10,7 @@ namespace Jexer
 		m_shaderObj.resize(JEXER_SHADER_NUM);
 	}
 
-	GLuint JexerShaderProgramCreator::CreateShaderProgram()
+	ShaderProgramId JexerShaderProgramCreator::CreateShaderProgram()
 	{
 		CompilerShader();
 		LinkShader();
@@ -33,7 +33,7 @@ namespace Jexer
 				{
 					const char* shaderCodeChars = shader.GetShaderCode().c_str();
 					const GLint shaderCodeSize = static_cast<GLint>(shader.GetShaderSize());
-					GLuint shaderId = glCreateShader(JexerShaderSlot::MapShaderTypeToGL(shader.GetShaderType()));
+					ShaderObjectId shaderId = glCreateShader(JexerShaderSlot::MapShaderTypeToGL(shader.GetShaderType()));
 					glShaderSource(shaderId, 1, &shaderCodeChars, &shaderCodeSize);
 					glCompileShader(shaderId);
 
