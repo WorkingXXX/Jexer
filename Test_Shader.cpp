@@ -74,33 +74,33 @@ void Display()
 	glFlush();
 }
 
-int main()
-{
-	if (glfwInit())
-	{
-		Jexer::JexerWindow win(400, 400, "Test_Shader");
-
-		glfwMakeContextCurrent(win.GetHandle());
-
-		glewInit();
-	
-		Init();
-
-		while (!glfwWindowShouldClose(win.GetHandle()))
-		{
-			
-			glClear(GL_COLOR_BUFFER_BIT);
-
-			Display();
-
-			glfwSwapBuffers(win.GetHandle());
-			glfwPollEvents();
-		}
-
-		glfwTerminate();
-
-	}
-
-	glfwTerminate();
-	system("pause");
-}
+//int main()
+//{
+//	if (glfwInit())
+//	{
+//		Jexer::JexerWindow win(400, 400, "Test_Shader");
+//
+//		glfwMakeContextCurrent(win.GetHandle());
+//
+//		glewInit();
+//	
+//		Init();
+//
+//		while (!glfwWindowShouldClose(win.GetHandle()))
+//		{
+//			
+//			glClear(GL_COLOR_BUFFER_BIT);
+//
+//			Display();
+//
+//			glfwSwapBuffers(win.GetHandle());
+//			glfwPollEvents();
+//		}
+//
+//		glfwTerminate();
+//
+//	}
+//
+//	glfwTerminate();
+//	system("pause");
+//}
